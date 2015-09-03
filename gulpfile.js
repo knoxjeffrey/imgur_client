@@ -9,7 +9,7 @@ var server = require('gulp-server-livereload');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
-var connect = require('gulp-connect');
+var serve = require('gulp-serve');
 
 var notify = function(error) {
   var message = 'In: ';
@@ -87,7 +87,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('serve-prod', function() {
-  connect.server({
+  serve.server({
     root: './',
     port: process.env.PORT || 5000,
     livereload: false
